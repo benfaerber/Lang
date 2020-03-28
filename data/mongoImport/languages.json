@@ -1,0 +1,90 @@
+{"code": "zh", "speakers": 918, "name": "Mandarin Chinese", "rank": 1}
+{"code": "es", "speakers": 480, "name": "Spanish", "rank": 2}
+{"code": "en", "speakers": 379, "name": "English", "rank": 3}
+{"code": "hi", "speakers": 341, "name": "Hindi", "rank": 4}
+{"code": "bn", "speakers": 228, "name": "Bengali", "rank": 5}
+{"code": "pt", "speakers": 221, "name": "Portuguese", "rank": 6}
+{"code": "ru", "speakers": 154, "name": "Russian", "rank": 7}
+{"code": "ja", "speakers": 128, "name": "Japanese", "rank": 8}
+{"code": "pa", "speakers": 92.7, "name": "Punjabi", "rank": 9}
+{"code": "mr", "speakers": 83.1, "name": "Marathi", "rank": 10}
+{"code": "te", "speakers": 82.0, "name": "Telugu", "rank": 11}
+{"code": "wu", "speakers": 81.4, "name": "Wu Chinese", "rank": 12}
+{"code": "tr", "speakers": 79.4, "name": "Turkish", "rank": 13}
+{"code": "ko", "speakers": 77.3, "name": "Korean", "rank": 14}
+{"code": "fr", "speakers": 77.2, "name": "French", "rank": 15}
+{"code": "de", "speakers": 76.1, "name": "German", "rank": 16}
+{"code": "vi", "speakers": 76.0, "name": "Vietnamese", "rank": 17}
+{"code": "ta", "speakers": 75.0, "name": "Tamil", "rank": 18}
+{"code": "yue", "speakers": 73.1, "name": "Yue Chinese", "rank": 19}
+{"code": "ur", "speakers": 68.6, "name": "Urdu", "rank": 20}
+{"code": "jv","speakers": 68.3, "name": "Javanese", "rank": 21}
+{"code": "it","speakers": 64.8, "name": "Italian", "rank": 22}
+{"code": "arz","speakers": 64.6, "name": "Egyptian Arabic", "rank": 23}
+{"code": "gu","speakers": 56.4, "name": "Gujarati", "rank": 24}
+{"code": "pes", "speakers": 52.8, "name": "Iranian Persian", "rank": 25}
+{"code": "bho", "speakers": 52.2, "name": "Bhojpuri", "rank": 26}
+{"code": "nan", "speakers": 50.1, "name": "Min Nan Chinese", "rank": 27}
+{"code": "hak", "speakers": 48.2, "name": "Hakka Chinese", "rank": 28}
+{"code": "cjy", "speakers": 46.9, "name": "Jin Chinese", "rank": 29}
+{"code": "ha","speakers": 43.9, "name": "Hausa", "rank": 30}
+{"code": "kn","speakers": 43.6, "name": "Kannada", "rank": 31}
+{"code": "id","speakers": 43.4, "name": "Indonesian", "rank": 32}
+{"code": "pl","speakers": 39.7, "name": "Polish", "rank": 33}
+{"code": "yo","speakers": 37.8, "name": "Yoruba", "rank": 34}
+{"code": "hsn", "speakers": 37.3, "name": "Xiang Chinese", "rank": 35}
+{"code": "ml", "speakers": 37.1, "name": "Malayalam", "rank": 36}
+{"code": "or", "speakers": 34.5, "name": "Odia", "rank": 37}
+{"code": "mai", "speakers": 33.9, "name": "Maithili", "rank": 38}
+{"code": "my", "speakers": 32.9, "name": "Burmese", "rank": 39}
+{"code": "su", "speakers": 32.4, "name": "Sunda", "rank": 41}
+{"code": "apd", "speakers": 31.9, "name": "Sudanese Arabic", "rank": 42}
+{"code": "arq", "speakers": 29.4, "name": "Algerian Arabic", "rank": 43}
+{"code": "ary", "speakers": 27.5, "name": "Moroccan Arabic", "rank": 44}
+{"code": "uk", "speakers": 27.3, "name": "Ukrainian", "rank": 45}
+{"code": "ig", "speakers": 27.0, "name": "Igbo", "rank": 46}
+{"code": "uz", "speakers": 25.1, "name": "Northern Uzbek", "rank": 47}
+{"code": "sd", "speakers": 24.6, "name": "Sindhi", "rank": 48}
+{"code": "apc", "speakers": 24.6, "name": "North Levantine Arabic", "rank": 49}
+{"code": "ro", "speakers": 24.3, "name": "Romanian", "rank": 50}
+{"code": "tl", "speakers": 23.6, "name": "Tagalog", "rank": 51}
+{"code": "nl", "speakers": 23.1, "name": "Dutch", "rank": 52}
+{"code": "aec", "speakers": 22.4, "name": "Sa'idi Arabic", "rank": 53}
+{"code": "gan", "speakers": 22.1, "name": "Gan Chinese", "rank": 54}
+{"code": "am", "speakers": 21.9, "name": "Amharic", "rank": 55}
+{"code": "pbu", "speakers": 20.9, "name": "Northern Pashto", "rank": 56}
+{"code": "mag", "speakers": 20.7, "name": "Magahi", "rank": 57}
+{"code": "th", "speakers": 20.7, "name": "Thai", "rank": 58}
+{"code": "skr", "speakers": 20.0, "name": "Saraiki", "rank": 59}
+{"code": "km", "speakers": 16.6, "name": "Khmer", "rank": 60}
+{"code": "hne", "speakers": 16.3, "name": "Chhattisgarhi", "rank": 61}
+{"code": "so", "speakers": 16.2, "name": "Somali", "rank": 62}
+{"code": "ms", "speakers": 16.1, "name": "Malay", "rank": 63}
+{"code": "ceb", "speakers": 15.9, "name": "Cebuano", "rank": 64}
+{"code": "ne", "speakers": 15.8, "name": "Nepali", "rank": 65}
+{"code": "acm", "speakers": 15.7, "name": "Mesopotamian Arabic", "rank": 66}
+{"code": "as", "speakers": 15.3, "name": "Assamese", "rank": 67}
+{"code": "si", "speakers": 15.3, "name": "Sinhalese", "rank": 68}
+{"code": "ine", "speakers": 14.6, "name": "Indo-European", "rank": 69}
+{"code": "acw", "speakers": 14.5, "name": "Hejazi Arabic", "rank": 70}
+{"code": "ff", "speakers": 14.5, "name": "Nigerian Fulfulde", "rank": 71}
+{"code": "bar", "speakers": 14.1, "name": "Bavarian", "rank": 72}
+{"code": "tur", "speakers": 13.8, "name": "Turkic", "rank": 73}
+{"code": "el", "speakers": 13.1, "name": "Greek", "rank": 74}
+{"code": "ctg", "speakers": 13.0, "name": "Chittagonian", "rank": 75}
+{"code": "kk", "speakers": 12.9, "name": "Kazakh", "rank": 76}
+{"code": "dcc", "speakers": 12.8, "name": "Deccan", "rank": 77}
+{"code": "hu", "speakers": 12.6, "name": "Hungarian", "rank": 78}
+{"code": "rw", "speakers": 12.1, "name": "Kinyarwanda", "rank": 79}
+{"code": "zu", "speakers": 12.1, "name": "Zulu", "rank": 80}
+{"code": "ajp", "speakers": 11.6, "name": "South Levantine Arabic", "rank": 81}
+{"code": "aeb", "speakers": 11.6, "name": "Tunisian Arabic", "rank": 82}
+{"code": "ayh", "speakers": 11.4, "name": "Sanaani Spoken Arabic", "rank": 83}
+{"code": "mnp", "speakers": 11.0, "name": "Min Bei Chinese", "rank": 84}
+{"code": "ps", "speakers": 10.9, "name": "Southern Pashto", "rank": 85}
+{"code": "rn", "speakers": 10.8, "name": "Rundi", "rank": 86}
+{"code": "cs", "speakers": 10.7, "name": "Czech", "rank": 87}
+{"code": "acq", "speakers": 10.5, "name": "Ta'izzi-Adeni Arabic", "rank": 88}
+{"code": "ug", "speakers": 10.4, "name": "Uyghur", "rank": 89}
+{"code": "cdo", "speakers": 10.3, "name": "Min Dong Chinese", "rank": 90}
+{"code": "syl", "speakers": 10.3, "name": "Sylheti", "rank": 91}
