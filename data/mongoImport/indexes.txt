@@ -1,2 +1,3 @@
 db.countries.ensureIndex({country:"text", code:"text", tags: "text"})
 db.cities.ensureIndex({name:"text", subcountry:"text", tags: "text"})
+db.languages.ensureIndex({name:"text", code:"text"})

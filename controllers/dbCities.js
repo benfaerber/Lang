@@ -49,7 +49,6 @@ module.exports = db => {
 			'New York',
 			'new york city'
 		);
-		console.log(search);
 	};
 
 	return module;
