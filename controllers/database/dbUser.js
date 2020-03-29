@@ -42,7 +42,7 @@ module.exports = db => {
 
 	// returns boolean if auth passes
 	module.checkPassword = async (username, testPass) => {
-		let userPass = await getPassword(username);
+		let userPass = await module.getPassword(username);
 		if (!userPass) {
 			return false;
 		}

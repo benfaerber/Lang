@@ -1,0 +1,26 @@
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "liltim",
+  "password": "1234"
+}
+
+###
+
+GET http://localhost:8080/login
+
+###
+POST http://localhost:8080/register
+Content-Type: application/json
+
+{
+  "firstName": "Ted",
+  "lastName": "Smith",
+  "username": "bobbyboy",
+  "password": "1234"
+}
+
+###
+
+GET http://localhost:8080/api/getUser

@@ -2,12 +2,17 @@ const express = require('express');
 const session = require('express-session');
 const app = express();
 
+const db = require('./controllers/database/mongo');
+const userApi = require('./controllers/api/user');
+const locationSearchApi = require('./controllers/api/locationSearch');
+const userLogin = require('./controllers/user/login');
+
 app.use('/static', express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
 	session({
-		secret: 'keyboard cat',
+		secret: 'robotic horse asshole',
 		resave: false,
 		saveUninitialized: true,
 		cookie: { secure: false }
@@ -20,14 +25,29 @@ app.get('/', (req, res) => {
 	res.render('pages/index');
 });
 
+app.post('/login', async (req, res) => {
+	let success = await userLogin.login(req, res);
+	// Render ejs n shit
+	res.end();
+});
+
+app.post('/register', async (req, res) => {
+	let success = await userLogin.register(req, res);
+	res.end();
+});
+
+// API
 // User API
-const userApi = require('./controllers/api/user');
+// Usage: /api/getUser
 app.get('/api/getUser', async (req, res) => {
 	userApi.getUser(req, res);
 });
 
+app.get('/api/currentUser', async (req, res) => {
+	res.end(req.session.user);
+});
+
 // Location Search API
-const locationSearchApi = require('./controllers/api/locationSearch');
 // Usage: /api/searchCountry?co=SEARCH
 app.get('/api/searchCountry', async (req, res) => {
 	locationSearchApi.searchCountry(req, res);

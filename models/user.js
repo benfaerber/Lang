@@ -11,7 +11,7 @@ module.exports = class User {
 		this.created = json.created;
 		this.lastActive = json.lastActive || json.created;
 		this.points = json.points || {};
-		if (Object.keys(this.points).length !== 0) {
+		if (this.points && Object.keys(this.points).length !== 0) {
 			this.totalPoints = Object.values(this.points).reduce((acc, c) => acc + c);
 		} else {
 			this.totalPoints = 0;
@@ -21,7 +21,7 @@ module.exports = class User {
 	}
 
 	toSave() {
-		obj = {
+		let obj = {
 			firstName: this.firstName,
 			lastName: this.lastName,
 			username: this.username,
@@ -29,11 +29,11 @@ module.exports = class User {
 			pfp: this.pfp,
 			created: this.created,
 			lastActive: this.lastActive,
-			points: this.points,
+			points: this.points
 		};
 		return obj;
 	}
-	
+
 	fullname() {
 		return `${this.firstName} ${this.lastName}`;
 	}

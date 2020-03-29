@@ -1,0 +1,25 @@
+Register
+  Get:
+    Renders EJS
+  Post:
+    Takes the users basic info
+    Puts it into the database
+    Renders EJS
+
+Login
+  Get:
+    Renders EJS
+  Post:
+    Checks user creds
+    if pass
+      sets session
+    Renders EJS
+
+API
+  user
+    getUser - if a user passes sess auth, get their database
+
+  locationSearch
+    searchCountry
+    searchState
+    searchCity
