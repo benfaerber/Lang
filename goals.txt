@@ -15,6 +15,13 @@ Login
       sets session
     Renders EJS
 
+Settings Page
+  Add more user data
+    Profile pic
+    City (using live search api)
+    Language Profiency (using lang api)
+    Bio and other text
+
 API
   user
     getUser - if a user passes sess auth, get their database
