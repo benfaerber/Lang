@@ -2,7 +2,7 @@ let db;
 
 const mongo = require('mongodb').MongoClient;
 const connectionString = 'mongodb://localhost:27017/';
-let dbUser, dbCities, dbLanguage;
+let user, city, lang;
 
 (async () => {
 	let client = await mongo.connect(connectionString, {
@@ -11,10 +11,14 @@ let dbUser, dbCities, dbLanguage;
 	});
 	db = client.db('node');
 	// Import modules here:
-	dbUser = require('./dbUser')(db);
-	dbCities = require('./dbCities')(db);
-	dbLanguage = require('./dbLanguage')(db);
+	user = require('./dbUser')(db);
+	city = require('./dbCities')(db);
+	lang = require('./dbLanguage')(db);
+
+	exports.user = user;
+	exports.city = city;
+	exports.lang = lang;
 
 	// Run whatever playground needs to be run:
-	await dbLanguage.playground();
+	//await lang.playground();
 })().catch(err => console.error(err));

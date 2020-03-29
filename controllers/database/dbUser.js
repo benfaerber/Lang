@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const User = require('../models/user');
+const User = require('../../models/user');
 
 module.exports = db => {
 	var uc = db.collection('users');
@@ -10,8 +10,13 @@ module.exports = db => {
 		return result.map(user => new User(user));
 	};
 
-	module.getUser = async uname =>
-		new User(await uc.findOne({ username: uname }));
+	module.getUser = async uname => {
+		let user = await uc.findOne({ username: uname });
+		if (!user) {
+			return null;
+		}
+		return new User(user);
+	};
 
 	module.getPassword = async uname => {
 		let result = await uc.findOne({ username: uname });
