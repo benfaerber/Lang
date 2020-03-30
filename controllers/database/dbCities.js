@@ -6,7 +6,7 @@ module.exports = db => {
 	var searchLimit = 100;
 
 	module.searchCountry = async term => {
-		if (term.length == 2) {
+		if (term.length === 2) {
 			term = term.toUpperCase();
 			return await countries.find({ code: term }).toArray();
 		} else {

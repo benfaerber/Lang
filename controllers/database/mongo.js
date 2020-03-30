@@ -11,14 +11,11 @@ let user, city, lang;
 	});
 	db = client.db('node');
 	// Import modules here:
-	user = require('./dbUser')(db);
-	city = require('./dbCities')(db);
-	lang = require('./dbLanguage')(db);
-
-	exports.user = user;
-	exports.city = city;
-	exports.lang = lang;
+	exports.user = require('./dbUser')(db);
+	exports.city = require('./dbCities')(db);
+	exports.lang = require('./dbLanguage')(db);
+	exports.tran = require('./dbTranslation')(db);
 
 	// Run whatever playground needs to be run:
-	//await lang.playground();
+	//await exports.tran.playground();
 })().catch(err => console.error(err));

@@ -6,6 +6,8 @@ const db = require('./controllers/database/mongo');
 const userApi = require('./controllers/api/user');
 const locationSearchApi = require('./controllers/api/locationSearch');
 const languageSearchApi = require('./controllers/api/languageSearch');
+const languageDetectApi = require('./controllers/api/languageDetect');
+
 const userLogin = require('./controllers/user/login');
 
 app.use('/static', express.static('public'));
@@ -38,8 +40,10 @@ app.post('/register', async (req, res) => {
 });
 
 app.get('/signout', (req, res) => {
-	req.session.destroy();
-	res.redirect('/login');
+	req.session.destroy(err => {
+		if (err) console.error(err);
+		res.redirect('/login');
+	});
 });
 
 // API
@@ -69,6 +73,11 @@ app.get('/api/searchCity', async (req, res) => {
 // Usage: /api/searchLanguage?term=SEARCH
 app.get('/api/searchLanguage', async (req, res) => {
 	languageSearchApi.searchLang(req, res);
+});
+
+// Usage: /api/detectLanguage?text=TEXT
+app.get('/api/detectLanguage', (req, res) => {
+	languageDetectApi.detectLang(req, res);
 });
 
 // End Location Search API

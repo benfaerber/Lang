@@ -27,7 +27,7 @@ module.exports = db => {
 	module.createUser = async (user, password) => {
 		obj = user.toSave();
 		obj.password = await bcrypt.hash(password, 10);
-		uc.insertOne(obj);
+		await uc.insertOne(obj);
 		console.log(`User '${user.username}' was created.`);
 	};
 

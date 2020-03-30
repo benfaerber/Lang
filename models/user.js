@@ -1,23 +1,23 @@
 module.exports = class User {
-	constructor(json) {
+	constructor(obj) {
 		// Required when creating a user
 		//firstName, lastName, username, created
 
-		this.firstName = json.firstName;
-		this.lastName = json.lastName;
-		this.username = json.username;
-		this.bio = json.bio || '';
-		this.pfp = json.pfp || '';
-		this.created = json.created;
-		this.lastActive = json.lastActive || json.created;
-		this.points = json.points || {};
+		this.firstName = obj.firstName;
+		this.lastName = obj.lastName;
+		this.username = obj.username;
+		this.bio = obj.bio || '';
+		this.pfp = obj.pfp || '';
+		this.created = obj.created;
+		this.lastActive = obj.lastActive || obj.created;
+		this.points = obj.points || {};
 		if (this.points && Object.keys(this.points).length !== 0) {
 			this.totalPoints = Object.values(this.points).reduce((acc, c) => acc + c);
 		} else {
 			this.totalPoints = 0;
 		}
 
-		this.speaks = json.speaks || {};
+		this.speaks = obj.speaks || {};
 	}
 
 	toSave() {
