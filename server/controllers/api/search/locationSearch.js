@@ -1,4 +1,4 @@
-const db = require('../database/mongo');
+const db = require('../../database/mongo');
 
 error = { error: 'There is an error with your request' };
 

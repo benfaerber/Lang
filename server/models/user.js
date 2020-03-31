@@ -1,10 +1,7 @@
 module.exports = class User {
 	constructor(obj) {
 		// Required when creating a user
-		//firstName, lastName, username, created
-
-		this.firstName = obj.firstName;
-		this.lastName = obj.lastName;
+		//username, created
 		this.username = obj.username;
 		this.bio = obj.bio || '';
 		this.pfp = obj.pfp || '';
@@ -22,8 +19,6 @@ module.exports = class User {
 
 	toSave() {
 		let obj = {
-			firstName: this.firstName,
-			lastName: this.lastName,
 			username: this.username,
 			bio: this.bio,
 			pfp: this.pfp,
@@ -32,9 +27,5 @@ module.exports = class User {
 			points: this.points
 		};
 		return obj;
-	}
-
-	fullname() {
-		return `${this.firstName} ${this.lastName}`;
 	}
 };
