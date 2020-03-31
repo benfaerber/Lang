@@ -7,8 +7,8 @@ const userApi = require('./controllers/api/auth/user');
 const locationSearchApi = require('./controllers/api/search/locationSearch');
 const languageSearchApi = require('./controllers/api/search/languageSearch');
 const languageDetectApi = require('./controllers/api/search/languageDetect');
-
 const authApi = require('./controllers/api/auth/auth');
+const imgApi = require('./controllers/api/img/img');
 
 app.use('/static', express.static('public'));
 app.use(express.json());
@@ -64,5 +64,9 @@ app.get('/api/searchLanguage', async (req, res) => {
 app.get('/api/detectLanguage', (req, res) => {
 	languageDetectApi.detectLang(req, res);
 });
+
+app.get('/api/profilePic', (req, res) => {
+	imgApi.profilePic(req, res);
+})
 
 app.listen(8080);
