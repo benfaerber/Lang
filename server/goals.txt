@@ -22,6 +22,21 @@ Settings Page
     Language Profiency (using lang api)
     Bio and other text
 
+Request Translation
+  Use langauge detection api
+  Enter all the data about Request
+
+View Requests
+  A list of all avaible Requests
+
+Indiviual Request
+  A page with the request you clicked on
+  You write the translation here
+
+User profile
+  Show translations and requests made by the user
+  Show basic user info
+
 API
   user
     getUser - if a user passes sess auth, get their database
@@ -30,3 +45,5 @@ API
     searchCountry
     searchState
     searchCity
+
+  lanaguage detector
