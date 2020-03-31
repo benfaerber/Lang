@@ -38,6 +38,12 @@ exports.register = async (req, res) => {
 		return;
 	}
 
+	let existingUser = db.user.getUser(uname);
+	if (existingUser) {
+		res.json({status: 'error'});
+		return;
+	}
+
 	let now = Math.floor(+new Date() / 1000);
 	userValues = {
 		username: uname,
@@ -45,7 +51,6 @@ exports.register = async (req, res) => {
 	};
 
 	let user = new User(userValues);
-
 	await db.user.createUser(user, password);
 	req.session.user = uname;
 	res.json({status: 'ok'})

@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Pic = props => {
   let builtLink = () => `http://localhost:8080/api/profilePic?u=${props.username}`;
   let size = props.size || "32px";
   return (
-    <div className="align-bottom">
-      <img  src={builtLink()} width={size} height={size}></img> 
-    </div>
+    <img className="rounded" src={builtLink()} width={size} height={size}></img> 
   );
 }
 
