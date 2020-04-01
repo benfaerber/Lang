@@ -4,7 +4,7 @@ import {Card, CardImg, CardText, CardBody, CardHeader,
 	CardTitle, CardSubtitle, Row, Col, Button, Spinner, Alert} from 'reactstrap';
 import TextInput from '../TextInput';
 import Title from '../nav/Title';
-import post from '../Post';
+import Post from '../Post';
 
 class Login extends Component {
 	constructor(props) {
@@ -22,7 +22,7 @@ class Login extends Component {
 			username: document.querySelector("#username").value,
 			password: document.querySelector("#password").value
 		}
-		let data = await post(url, obj);
+		let data = await Post(url, obj);
 
 		if (!data || data.status === 'error') {
 			this.setState({showError: true, loggingIn: false});

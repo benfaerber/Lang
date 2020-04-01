@@ -1,5 +1,5 @@
 
-let post = async (url, data) => {
+let Post = async (url, data) => {
   let options = {
     method: 'POST',
     mode: 'cors',
@@ -19,4 +19,4 @@ let post = async (url, data) => {
   }
 }
 
-export default post;
+export default Post;
