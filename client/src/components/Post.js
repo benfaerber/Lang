@@ -3,6 +3,7 @@ let Post = async (url, data) => {
   let options = {
     method: 'POST',
     mode: 'cors',
+    credentials: 'include',
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json;charset=UTF-8'

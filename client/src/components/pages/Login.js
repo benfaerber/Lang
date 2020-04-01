@@ -45,7 +45,7 @@ class Login extends Component {
 							Login
 						</CardHeader>
 						<Card body>
-							<TextInput name="username" placeholder="john.smith" onChange={this.onChange}/>
+							<TextInput name="username" placeholder="username" onChange={this.onChange}/>
 							<TextInput name="password" type="password" placeholder="*********"  onChange={this.onChange}/>
 							<Button color="success" id="submitButton" onClick={this.onSubmit}>
 								{

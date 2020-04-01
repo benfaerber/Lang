@@ -12,17 +12,31 @@ const authApi = require('./controllers/api/auth/auth');
 const imgApi = require('./controllers/api/img/img');
 
 app.use('/static', express.static('public'));
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
 	session({
 		secret: 'robotic horse asshole',
-		resave: false,
+		resave: true,
 		saveUninitialized: true,
-		cookie: { secure: false }
+		proxy: true,
+		cookie: {
+			path: '/',
+			secure: false, 
+			sameSite : 'none',
+			httpOnly: false 
+		}
 	})
 );
+
+
+corsOpts = {
+	origin: (origin, callback) => {	
+	  callback(null, origin === 'http://localhost:3000');
+	},
+	credentials: true
+}
+app.use(cors(corsOpts));
 
 app.post('/api/login', async (req, res) => {
 	await authApi.login(req, res);

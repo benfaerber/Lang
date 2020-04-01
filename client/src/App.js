@@ -25,6 +25,7 @@ class App extends Component {
 	onLogin = async user => {
 		console.log(user);
 		this.setState({loggedIn: true, user:user});
+		localStorage.setItem('user', user)
 	}
 
 	onSignout = () => {

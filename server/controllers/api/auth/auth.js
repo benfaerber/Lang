@@ -4,6 +4,7 @@ const User = require('../../../models/user');
 exports.login = async (req, res) => {
 	if (!req.body.username || !req.body.password) {
 		res.json({status: 'error'});
+		return;
 	}
 
 	const check = await db.user.checkPassword(
@@ -14,6 +15,7 @@ exports.login = async (req, res) => {
 	if (check) {
 		console.log(`User '${req.body.username}' logged in!`);
 		req.session.user = req.body.username;
+		req.session.save();
 		let user = await db.user.getUser(req.body.username);
 		res.json({status: 'ok', user})
 	} else {
