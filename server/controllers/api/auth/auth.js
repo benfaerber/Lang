@@ -3,7 +3,7 @@ const User = require('../../../models/user');
 
 exports.login = async (req, res) => {
 	if (!req.body.username || !req.body.password) {
-		res.json({ ok: false, message: 'Data missing!' });
+		res.json({status: 'error'});
 	}
 
 	const check = await db.user.checkPassword(

@@ -6,7 +6,7 @@ const TextInput = props => {
   return (
   <FormGroup>
     <Label for={props.name}>{props.label || capitalize(props.name)}</Label>
-    <Input type={props.type || "text"} name={props.name} id={props.name} placeholder={props.placeholder || capitalize(props.name)} />
+    <Input type={props.type || "text"} name={props.name} id={props.name} placeholder={props.placeholder || capitalize(props.name)} onChange={props.onChange} />
   </FormGroup>
   );
 }

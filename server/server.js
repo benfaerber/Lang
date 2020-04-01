@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const cors = require('cors')
 const app = express();
 
 const db = require('./controllers/database/mongo');
@@ -11,6 +12,7 @@ const authApi = require('./controllers/api/auth/auth');
 const imgApi = require('./controllers/api/img/img');
 
 app.use('/static', express.static('public'));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
