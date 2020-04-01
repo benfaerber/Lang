@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import React, {useState} from 'react';
+import {Link} from "react-router-dom";
 import ProfilePic from '../ProfilePic';
+
 
 const HeaderLinks = (props) => {
   return (
@@ -15,14 +16,19 @@ const HeaderLinks = (props) => {
   );
 };
 
-const HeaderLink = (props) => {
-  const isActive = () => window.location.pathname == (props.href) ? "nav-item active" : "nav-item";
+class HeaderLink extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {active: false};
+  }
 
-  return (
-    <li className={isActive()}>
-      <a className="nav-link" href={props.href}>{props.text}</a>
-    </li>
-  )
+  render() {
+    return (
+      <li className={this.state.active ? "nav-item active" : "nav-item"}>
+        <Link className="nav-link" to={this.props.href} onClick={() => this.setState({active: true})}>{this.props.text}</Link>
+      </li>
+    );
+  }
 }
 
 const UserHeader = (props) => {
@@ -65,7 +71,7 @@ const Header = (props) => {
       col.style.display = "block";
       first = false;
     } else {
-      col.style.display = col.style.display == "none" ? "block" : "none";
+      col.style.display = col.style.display === "none" ? "block" : "none";
     }
   };
 
