@@ -83,7 +83,7 @@ const Header = (props) => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarResponsive">
-        <HeaderLinks loggedIn={true}/>
+        <HeaderLinks loggedIn={false}/>
       </div>
     </div>
   </nav>
