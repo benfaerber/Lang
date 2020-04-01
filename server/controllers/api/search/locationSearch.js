@@ -3,47 +3,47 @@ const db = require('../../database/mongo');
 error = { error: 'There is an error with your request' };
 
 exports.searchCountry = async (req, res) => {
-	if (!req.query.co) {
+	if (!req.body.co) {
 		res.json(error);
 		return;
 	}
 
-	if (req.query.co.length < 2) {
+	if (req.body.co.length < 2) {
 		res.json({ response: 'too short' });
 		return;
 	}
 
-	let search = await db.city.searchCountry(req.query.co);
+	let search = await db.city.searchCountry(req.body.co);
 	res.json(search);
 };
 
 exports.searchState = async (req, res) => {
-	if (!req.query.st || !req.query.co) {
+	if (!req.body.st || !req.body.co) {
 		res.json(error);
 		return;
 	}
 
-	if (req.query.st.length < 2 || req.query.co.length < 4) {
+	if (req.body.st.length < 2 || req.body.co.length < 4) {
 		res.json({ response: 'too short' });
 		return;
 	}
 
-	let search = await db.city.searchState(req.query.co, req.query.st);
+	let search = await db.city.searchState(req.body.co, req.body.st);
 	res.json(search);
 };
 
 exports.searchCity = async (req, res) => {
-	if (!req.query.ci || !req.query.co) {
+	if (!req.body.ci || !req.body.co) {
 		res.json(error);
 		return;
 	}
 
-	if (req.query.ci.length < 2 || req.query.co.length < 4) {
+	if (req.body.ci.length < 2 || req.body.co.length < 4) {
 		res.json({ response: 'too short' });
 		return;
 	}
 
-	let state = req.query.st || '';
-	let search = await db.city.searchCity(req.query.co, state, req.query.ci);
+	let state = req.body.st || '';
+	let search = await db.city.searchCity(req.body.co, state, req.body.ci);
 	res.json(search);
 };

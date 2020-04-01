@@ -1,41 +1,35 @@
-import React, {useState} from 'react';
+import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import ProfilePic from '../ProfilePic';
-
+import Signout from './Signout';
 
 const HeaderLinks = (props) => {
   return (
     <>
     <ul className="navbar-nav ml-auto">
       <PreSharedHeader />
-      {props.loggedIn ? <UserHeader /> : <GuestHeader/>}
+      {props.loggedIn ? <UserHeader onSignout={props.onSignout} user={props.user}/> : <GuestHeader/>}
       <PostSharedHeader />
     </ul>
-    {props.loggedIn ? <ProfilePic username="billburr" size="45px" /> : ""}
+    {props.loggedIn ? <ProfilePic username={props.user.username} size="45px" /> : ""}
     </>
   );
 };
 
-class HeaderLink extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {active: false};
-  }
-
-  render() {
-    return (
-      <li className={this.state.active ? "nav-item active" : "nav-item"}>
-        <Link className="nav-link" to={this.props.href} onClick={() => this.setState({active: true})}>{this.props.text}</Link>
-      </li>
-    );
-  }
+const HeaderLink = (props) => {
+  return (
+    <li className={props.active ? "nav-item active" : "nav-item"}>
+      <Link className="nav-link" to={props.href}>{props.text}</Link>
+    </li>
+  );
 }
 
 const UserHeader = (props) => {
   return (
   <>
   <HeaderLink href={"/request"} text={"Request Translation"} />
-  <HeaderLink href={"/profile"} text={"liltim"} />
+  <Signout onSignout={props.onSignout}/>
+  <HeaderLink href={"/profile"} text={props.user.username} />
   </>
   );
 }
@@ -62,32 +56,41 @@ const PostSharedHeader = (props) => {
     return <></>;
 }
 
-const Header = (props) => {
-  let first = true;
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedIn: false
+    };
+    this.first = true;
+  }
 
-  const toggleNavbar = () => {
+  toggleNavbar = () => {
     let col = document.getElementsByClassName("collapse")[0];
-    if (first) {
+    if (this.first) {
       col.style.display = "block";
-      first = false;
+      this.first = false;
     } else {
       col.style.display = col.style.display === "none" ? "block" : "none";
     }
   };
 
-  return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div className="container">
-      <a className="navbar-brand" href="#">Start Bootstrap</a>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" onClick={toggleNavbar}>
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarResponsive">
-        <HeaderLinks loggedIn={false}/>
+
+  render() {
+    return (
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div className="container">
+        <a className="navbar-brand" href="#">Start Bootstrap</a>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" onClick={this.toggleNavbar}>
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarResponsive">
+          <HeaderLinks loggedIn={this.props.loggedIn} onSignout={this.props.onSignout} user={this.props.user}/>
+        </div>
       </div>
-    </div>
-  </nav>
-  );
+    </nav>
+    );
+  }
 }
 
 export default Header;

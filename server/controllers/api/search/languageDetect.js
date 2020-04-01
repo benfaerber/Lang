@@ -2,18 +2,18 @@ const LanguageDetect = require('languagedetect');
 const detector = new LanguageDetect();
 
 exports.detectLang = (req, res) => {
-	if (!req.query.text) {
+	if (!req.body.text) {
 		res.json({ error: 'There was an error with your request' });
 		return;
 	}
 
-	if (req.query.text.length < 20) {
+	if (req.body.text.length < 20) {
 		res.json({ error: 'too short' });
 		return;
 	}
 
 	let results = detector
-		.detect(req.query.text)
+		.detect(req.body.text)
 		.map(elem => elem[0].substring(0, 1).toUpperCase() + elem[0].substring(1));
 
 	if (results.length === 0) {

@@ -20,3 +20,4 @@ let Post = async (url, data) => {
 }
 
 export default Post;
+

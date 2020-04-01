@@ -1,5 +1,5 @@
 import React, { Component, setState } from 'react';
-
+import {Redirect} from 'react-router';
 import {Card, CardImg, CardText, CardBody, CardHeader,
 	CardTitle, CardSubtitle, Row, Col, Button, Spinner, Alert} from 'reactstrap';
 import TextInput from '../TextInput';
@@ -11,7 +11,8 @@ class Login extends Component {
 		super(props);
 		this.state = {
 			loggingIn: false,
-			showError: false
+			showError: false,
+			shouldRedirect: false
 		}
 	}
 
@@ -28,6 +29,8 @@ class Login extends Component {
 			this.setState({showError: true, loggingIn: false});
 		} else {
 			console.log("Logged in!");
+			this.props.onLogin(data.user);
+			this.setState({shouldRedirect: true});
 		}
 	}
 
@@ -68,6 +71,9 @@ class Login extends Component {
 			</>
 			: ""}
 			<br/>
+
+  		{this.state.shouldRedirect ? <Redirect to="/" /> : ""}
+
 			</>
     );
 	}

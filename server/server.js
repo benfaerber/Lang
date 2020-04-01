@@ -32,38 +32,38 @@ app.post('/api/register', async (req, res) => {
 	await authApi.register(req, res);
 });
 
-app.get('/api/signout', (req, res) => {
+app.post('/api/signout', (req, res) => {
 	req.session.destroy(err => {
 		if (err) console.error(err);
 		res.json({status: 'ok'})
 	});
 });
 
-app.get('/api/getUser', async (req, res) => {
+app.post('/api/getUser', async (req, res) => {
 	userApi.getUser(req, res);
 });
 
-app.get('/api/currentUser', async (req, res) => {
+app.post('/api/currentUser', async (req, res) => {
 	res.end(req.session.user);
 });
 
-app.get('/api/searchCountry', async (req, res) => {
+app.post('/api/searchCountry', async (req, res) => {
 	locationSearchApi.searchCountry(req, res);
 });
 
-app.get('/api/searchState', async (req, res) => {
+app.post('/api/searchState', async (req, res) => {
 	locationSearchApi.searchState(req, res);
 });
 
-app.get('/api/searchCity', async (req, res) => {
+app.post('/api/searchCity', async (req, res) => {
 	locationSearchApi.searchCity(req, res);
 });
 
-app.get('/api/searchLanguage', async (req, res) => {
+app.post('/api/searchLanguage', async (req, res) => {
 	languageSearchApi.searchLang(req, res);
 });
 
-app.get('/api/detectLanguage', (req, res) => {
+app.post('/api/detectLanguage', (req, res) => {
 	languageDetectApi.detectLang(req, res);
 });
 

@@ -4,7 +4,7 @@ error = { error: 'There is an error with your request' };
 
 exports.getUser = async (req, res) => {
 	if (!req.session.user) {
-		res.json(error);
+		res.json({error: 'No user is signed in'});
 		return;
 	}
 
